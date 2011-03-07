@@ -32,8 +32,8 @@ Setting up development environment
 * Add `/migrater/config/local.yml`:
 
       host: localhost
-      username: root
-      password: roNNy
+      username: 
+      password: 
       database: mytomatoes
 
 * Run the migrations to setup database:
