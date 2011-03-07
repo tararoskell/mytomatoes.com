@@ -1,0 +1,22 @@
+
+ - øvre halvdel av skjermen er tiden som teller nedover.
+ - nedre halvdel dagens ferdige tomater, og tilbake i tid under overskriften "Yesterday, 11 tomatoes"
+ 
+ - State:
+      - Ingenting startet: en stor knapp med "Start pomodoro"
+      - Underveis: 25 min med nedtelling. En link for "cancel pomodoro"
+      - Ferdig: Blinkning og lyd. Du trykker for å avslutte.
+      - Beskrivelse: En kort "hva gjorde du"
+      - Pause: 5 min nedtelling.
+      - Ferdig: Blinking. "Back to work!"
+      
+      - Hver fjerde ferdige pomodoro starter en 25 minutter pause.
+      
+ - Superenkel registrering.
+ - En-sides app
+
+
+ - Registreringer er openid eller brukernavn+2xpassord. Superenkelt er målet.
+ 
+ - Arbeidsflaten er hvit med store tall "25 min"
+ - Pauseflaten er pyntet, jeg ser for meg grønne bladlignende kruseduller i rolige toner.

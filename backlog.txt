@@ -1,0 +1,19 @@
+In progress
+-----------
+
+
+Backlog
+-------
+ [ ] Inndeling i prosjekter
+ [ ] RSS (en checkbox: enable RSS -> gir hashet URL)
+ [ ] Tipjar
+ [ ] Statistics
+ [ ] Collapse month old -> month
+
+Done
+----
+ [x] Støtte for google analytics m/ajax-kall
+ [x] iPad++ support with <audio>
+ [x] Preferences-pane
+ [x] Soft ticking noise
+ [x] European vs American timestamp

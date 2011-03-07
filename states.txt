@@ -1,0 +1,29 @@
+
+
+  waiting
+    |
+  working
+    |
+  stop-working
+    |
+  enter-description   ----> timeout
+    |
+  break
+    |
+  break-over
+  
+  
+  
+  
+  decide upon a task, and start the tomato
+  
+  work for 25 uninterrupted minutes
+  
+  stop working when the timer rings
+  
+  write what you did, very short
+  
+  take a 5 minute break
+  
+  start a new tomato when the timer rings
+  
