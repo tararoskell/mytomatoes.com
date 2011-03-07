@@ -47,3 +47,16 @@ Running the tests
 -----------------
 * Run the PHP-tests with: `cd tests && php ts_all_tests.php text`
 * Run the JavaScript-tests with jsTestDriver
+
+
+Contributing
+------------
+
+1. Fork it.
+2. Create a branch (`git checkout -b branch_name`)
+3. Commit your changes (`git commit -am "Fixed stuff"`)
+4. Push to the branch (`git push origin branch_name`)
+5. Create an [Issue][1] with a link to your branch
+6. Enjoy a refreshing Diet Coke and wait
+
+[1]: http://github.com/github/markup/issues
