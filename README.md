@@ -45,8 +45,8 @@ Setting up development environment
 
 Running the tests
 -----------------
-* Run the PHP-tests with: `cd tests && php ts_all_tests.php text`
-* Run the JavaScript-tests with jsTestDriver
+* Run the PHP-tests with: `cd source/www/tests && php ts_all_tests.php text`
+* Run the JavaScript-tests with jsTestDriver from mytomatoes-root
 
 
 Contributing
@@ -59,4 +59,4 @@ Contributing
 5. Create an [Issue][1] with a link to your branch
 6. Enjoy a refreshing Diet Coke and wait
 
-[1]: http://github.com/github/markup/issues
+[1]: https://github.com/magnars/mytomatoes.com/issues
