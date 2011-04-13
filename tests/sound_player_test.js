@@ -12,7 +12,8 @@
 					if (event_callbacks[event_type]) {
 						event_callbacks[event_type].apply(this); 
 					}
-				}
+				},
+				readyState: 4
 			};
 		sinon.spy(audio, "play");
 		sinon.spy(audio, "pause");
@@ -96,6 +97,13 @@
 			
 			assertEquals(0, this.audio_elements.ticking_1.currentTime);
 			assertEquals(0, this.audio_elements.ticking_2.currentTime);
+		},
+		
+		"test should not play sound if audio element not ready": function () {
+			var player = MT.sound_player.create_audio_player();
+			this.audio_elements.alarm.readyState = 0;
+			player.play_alarm();
+			assertFalse(this.audio_elements.alarm.play.called);
 		}
 	
 	}));

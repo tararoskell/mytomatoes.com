@@ -257,7 +257,7 @@
     change_to_state.stop_working = function () {
         change_state_to("#stop_working");
 		if (sound_player.supports_ticking) {
-			//sound_player.stop_ticking();
+			sound_player.stop_ticking();
 		}
         sound_player.play_alarm();
         document.title = "break! - mytomatoes.com";
