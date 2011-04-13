@@ -50,6 +50,8 @@ var MT = MT || {};
 			return {
 				type: "flash",
 				swf: get_mp3player_swf(),
+				load_audio: function () {
+				},
 				play_alarm: function () {
 					this.swf.playSound("sounds/alarm.mp3");
 				},
@@ -76,20 +78,39 @@ var MT = MT || {};
 			
 			return {
 				type: "audio",
+				load_audio: function () {
+					if (!elements.alarm.readyState) {
+						elements.alarm.load();
+					}
+					if (!elements.ticking_1.readyState) {
+						elements.ticking_1.load();
+					}
+					if (!elements.ticking_2.readyState) {
+						elements.ticking_2.load();
+					}
+				},
 				play_alarm: function () {
-					elements.alarm.currentTime = 0;
-					elements.alarm.play();
+					if (elements.alarm.readyState) {
+						elements.alarm.currentTime = 0;
+						elements.alarm.play();
+					}
 				},
 				stop_alarm: function () {
-					elements.alarm.pause();
+					if (elements.alarm.readyState) {
+						elements.alarm.pause();
+					}
 				},
 				supports_ticking: true,
 				start_ticking: function () {
-					elements.ticking_1.play();
+					if (elements.ticking_1.readyState && elements.ticking_2.readyState) {
+						elements.ticking_1.play();
+					}
 				},
 				stop_ticking: function () {
-					elements.ticking_1.stop();
-					elements.ticking_2.stop();
+					if (elements.ticking_1.readyState && elements.ticking_2.readyState) {
+						elements.ticking_1.stop();
+						elements.ticking_2.stop();
+					}
 				}
 			};
 		}

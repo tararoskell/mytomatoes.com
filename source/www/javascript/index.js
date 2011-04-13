@@ -3,7 +3,7 @@
     var sound_player, enter_pressed_event, current_tomato, change_to_state = {}, current_state, current_tutorial_step;
 
 	function minutes(min) {
-		return min * (MT.debug ? 1 : 60);
+		return min * (MT.debug ? 0.2 : 60);
 	}
 
     function twentyfive_minutes() {
@@ -241,6 +241,7 @@
     /* states */
 
     change_to_state.working = function () {
+		sound_player.load_audio();
         change_state_to("#working");
         current_tomato = tomato();
         $("#time_left").countdown(twentyfive_minutes(), change_to_state.stop_working);
@@ -256,7 +257,7 @@
     change_to_state.stop_working = function () {
         change_state_to("#stop_working");
 		if (sound_player.supports_ticking) {
-			sound_player.stop_ticking();
+			//sound_player.stop_ticking();
 		}
         sound_player.play_alarm();
         document.title = "break! - mytomatoes.com";
