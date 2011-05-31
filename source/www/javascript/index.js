@@ -105,6 +105,9 @@
         if (confirm("Really squash tomato?")) {
             $.cancel_countdown();
             change_to_state.waiting();
+			if (sound_player.supports_ticking) {
+				sound_player.stop_ticking();
+			}
             $("#flash_message").flash("tomato squashed");
         }
         return false;
