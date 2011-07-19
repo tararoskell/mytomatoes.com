@@ -1,18 +1,18 @@
 In progress
 -----------
 
-
 Backlog
 -------
- [ ] Inndeling i prosjekter
- [ ] RSS (en checkbox: enable RSS -> gir hashet URL)
+ [ ] Edit old tomatoes
+ [ ] Separate tomoatoes into Projects
+ [ ] RSS (checkbox: enable RSS -> give hashed URL)
  [ ] Tipjar
  [ ] Statistics
  [ ] Collapse month old -> month
 
 Done
 ----
- [x] Støtte for google analytics m/ajax-kall
+ [x] Support google analytics w/ajax-kall
  [x] iPad++ support with <audio>
  [x] Preferences-pane
  [x] Soft ticking noise
