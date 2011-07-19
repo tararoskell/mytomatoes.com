@@ -59,12 +59,11 @@ Running the tests
 Contributing
 ------------
 
-1. Fork it.
-2. Create a branch (`git checkout -b branch_name`)
-3. Make your changes. Remember to add tests for your changes, so I won't inadvertently break it later.
-4. Commit your changes (`git commit -am "Fixed stuff"`)
-5. Push to the branch (`git push origin branch_name`)
-6. Create an [Issue][1] with a link to your branch
-7. Enjoy a refreshing sugarfilled Coke and wait
+If you want to help out with features or bug fixes, that's awesome.
+Check out `backlog.txt` for inspiration.
 
-[1]: https://github.com/magnars/mytomatoes.com/issues
+* Fork the project.
+* Make your feature addition or bug fix.
+* Don't forget tests. This is important so I don't break it in a
+  future version unintentionally.
+* Commit and send me a merge request.
