@@ -72,7 +72,7 @@ $helper = new IndexHelper();
     <li id="enter_description">
       <div id="congratulations">congrats! <span>first</span> finished tomato today</div>
       <div id="description">what did you do?</div>
-      <form><input type="text" /></form>
+      <form><input type="text" maxlength="255" /></form>
       <div id="void">or <a href="#">squash tomato</a></div>
     </li>
     <li id="on_a_break">
