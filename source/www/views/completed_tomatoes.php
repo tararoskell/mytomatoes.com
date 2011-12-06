@@ -4,7 +4,7 @@ require_once(dirname(__FILE__) . '/../model/session_manager.php');
 require_once(dirname(__FILE__) . '/../model/tomato.php');
 
 class CompletedTomatoesView {
-  
+
   public function __construct($account, $tomato_repo) {
     $this->clocktype = $account->getPreference("use_american_clock") == "true" ? "american_clock" : "european_clock";
     $this->account_id = $account->getId();
@@ -18,7 +18,7 @@ class CompletedTomatoesView {
     $this->split_tomatoes_into_days();
     return $this->render_days_html();
   }
-  
+
   private function fetch_tomatoes() {
     $this->tomatoes = $this->tomato_repo->byAccountId($this->account_id);
   }
@@ -44,13 +44,17 @@ class CompletedTomatoesView {
     }
     return $html."</div>";
   }
-  
+
+  private function escape($s) {
+    return str_replace("<", "&lt;", $s);
+  }
+
   private function render_day_html($day) {
     $html = "<h3><strong>".$day->date()."</strong> <span>".$day->number_of_tomatoes()."</span></h3>\n";
     $html .= "<ul>\n";
     foreach ($day->tomatoes() as $index => $tomato) {
       if ($tomato->getDescription()) {
-        $description = $tomato->getDescription();
+        $description = $this->escape($tomato->getDescription());
       } else {
         $description = "tomato #" . (sizeof($day->tomatoes()) - $index) . " finished";
       }
@@ -61,16 +65,16 @@ class CompletedTomatoesView {
     }
     return "$html</ul>\n";
   }
-  
+
 }
 
 class Day {
-  
+
   public function __construct($date) {
     $this->date = $date;
     $this->tomatoes = array();
   }
-  
+
   public function add($tomato) {
     $this->tomatoes[] = $tomato;
   }
@@ -78,17 +82,17 @@ class Day {
   public function date() {
     return $this->date;
   }
-  
+
   public function number_of_tomatoes() {
     $num = sizeof($this->tomatoes);
     $plural = $num == 1 ? "" : "es";
     return "$num finished tomato$plural";
   }
-  
+
   public function tomatoes() {
     return $this->tomatoes;
   }
-  
+
 }
 
 if (View::is_showing("completed_tomatoes.php")) {
