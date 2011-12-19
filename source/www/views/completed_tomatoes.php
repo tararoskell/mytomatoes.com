@@ -16,7 +16,19 @@ class CompletedTomatoesView {
   public function contents() {
     $this->fetch_tomatoes();
     $this->split_tomatoes_into_days();
-    return $this->render_days_html();
+    return $this->render_days_html() . $this->link_to_csv();
+  }
+
+  private function link_to_csv() {
+    if (sizeof($this->tomatoes) > 5) {
+      return "<div id='export'><a href='/csv.php'>Export tomatoes as csv</a></div>";
+    }
+  }
+
+  public function csv() {
+    $this->fetch_tomatoes();
+    $this->split_tomatoes_into_days();
+    return $this->render_days_csv();
   }
 
   private function fetch_tomatoes() {
@@ -45,8 +57,20 @@ class CompletedTomatoesView {
     return $html."</div>";
   }
 
+  private function render_days_csv() {
+    $csv = "";
+    foreach ($this->days as $day) {
+      $csv .= $this->render_day_csv($day);
+    }
+    return $csv;
+  }
+
   private function escape($s) {
     return str_replace("<", "&lt;", $s);
+  }
+
+  private function csvEscape($s) {
+    return str_replace('"', '""', $s);
   }
 
   private function render_day_html($day) {
@@ -64,6 +88,21 @@ class CompletedTomatoesView {
       $html .= " $description </li>\n";
     }
     return "$html</ul>\n";
+  }
+
+  private function render_day_csv($day) {
+    $csv = "";
+    foreach ($day->tomatoes() as $index => $tomato) {
+      if ($tomato->getDescription()) {
+        $description = $tomato->getDescription();
+      } else {
+        $description = "tomato #" . (sizeof($day->tomatoes()) - $index) . " finished";
+      }
+      $csv .= '"' . $tomato->getStartTime() . '",';
+      $csv .= '"' . $tomato->getEndTime() . '",';
+      $csv .= '"' . $this->csvEscape($description) . '"' . "\n";
+    }
+    return $csv;
   }
 
 }

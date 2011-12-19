@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/views/completed_tomatoes.php');
 
 class IndexHelper {
   public $completed_tomatoes;
-  
+
   public function __construct() {
     $this->sessions = SessionManager::current();
     $this->sessions->try_cookie_login();
@@ -20,7 +20,7 @@ class IndexHelper {
   function show_tutorial() {
     return ! $this->sessions->account()->getPreference("hide_tutorial");
   }
-  
+
   function ticking_checked() {
     return $this->sessions->account()->getPreference("play_ticking") == "true" ? "checked='checked'" : "";
   }
@@ -46,16 +46,16 @@ $helper = new IndexHelper();
 
 <body>
 <div id="main">
-  
+
   <div id="header">
     <h1>mytomatoes.com<div> simple pomodoro tracking</div></h1>
   </div>
-  
+
   <noscript>
     <style type="text/css" media="screen"> #states, #done, #welcome {display: none;} </style>
     <div id="noscript"><p>mytomatoes.com is a tool for use with the <a href="http://www.pomodorotechnique.com/">pomodoro technique</a> by <a href="http://cirillosscrapbook.wordpress.com/">Francesco Cirillo</a>. <em>It doesn't work without Javascript.</em> Sorry.</p></div>
   </noscript>
-    
+
   <ul id="states">
     <li id="waiting">
       <div id="flash_message">&nbsp;</div>
@@ -85,7 +85,7 @@ $helper = new IndexHelper();
       <div id="back_to_work">back to work!</div>
     </li>
   </ul>
-  
+
   <div id="preferences_container">
     <div id="preferences">
       <h3>preferences</h3>
@@ -100,13 +100,13 @@ $helper = new IndexHelper();
       </ul>
     </div>
   </div>
-  
+
   <? if ($helper->show_tutorial()) { include("views/tutorial.php"); } ?>
-  
+
   <div id="done">
     <?= $helper->completed_tomatoes ; ?>
   </div>
-  
+
   <div id="audio">
     <audio id="alarm_audio" autobuffer preload>
       <source src="sounds/alarm.ogg" />
@@ -124,7 +124,7 @@ $helper = new IndexHelper();
       <source src="sounds/ticking.wav" />
     </audio>
   </div>
-  
+
   <div id="push"></div>
 </div>
 <div id="footer">

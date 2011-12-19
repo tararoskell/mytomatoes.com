@@ -2,8 +2,12 @@ html {margin: 0;}
 html, body {height: 100%;}
 #main {min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -1.5em;}
 #footer, #push {height: 1.5em;}
+#export,
 #footer {text-align: center; font-size: 10px;color: #999;}
+#export a,
 #footer a {color: #99b;}
+
+#export {padding: 20px 0;}
 
 body {font-family:Verdana;background:#eee;}
 em {font-style: italic;}
