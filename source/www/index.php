@@ -109,19 +109,19 @@ $helper = new IndexHelper();
 
   <div id="audio">
     <audio id="alarm_audio" autobuffer preload>
-      <source src="sounds/alarm.ogg" />
-      <source src="sounds/alarm.mp3" />
-      <source src="sounds/alarm.wav" />
+      <source src="sounds/alarm.ogg" type='audio/ogg;codecs="vorbis"' />
+      <source src="sounds/alarm.mp3" type='audio/mpeg;codecs="mp3"'/>
+      <source src="sounds/alarm.wav" type='audio/x-wav;codecs="1"'/>
     </audio>
     <audio id="ticking_audio_1" autobuffer preload>
-      <source src="sounds/ticking.ogg" />
-      <source src="sounds/ticking.mp3" />
-      <source src="sounds/ticking.wav" />
+      <source src="sounds/ticking.ogg" type='audio/ogg;codecs="vorbis"' />
+      <source src="sounds/ticking.mp3" type='audio/mpeg;codecs="mp3"'/>
+      <source src="sounds/ticking.wav" type='audio/x-wav;codecs="1"'/>
     </audio>
     <audio id="ticking_audio_2" autobuffer preload>
-      <source src="sounds/ticking.ogg" />
-      <source src="sounds/ticking.mp3" />
-      <source src="sounds/ticking.wav" />
+      <source src="sounds/ticking.ogg" type='audio/ogg;codecs="vorbis"' />
+      <source src="sounds/ticking.mp3" type='audio/mpeg;codecs="mp3"'/>
+      <source src="sounds/ticking.wav" type='audio/x-wav;codecs="1"'/>
     </audio>
   </div>
 
