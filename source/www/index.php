@@ -108,17 +108,17 @@ $helper = new IndexHelper();
   </div>
 
   <div id="audio">
-    <audio id="alarm_audio" autobuffer preload>
+    <audio id="alarm_audio" autobuffer preload="auto">
       <source src="sounds/alarm.ogg" type='audio/ogg;codecs="vorbis"' />
       <source src="sounds/alarm.mp3" type='audio/mpeg;codecs="mp3"'/>
       <source src="sounds/alarm.wav" type='audio/x-wav;codecs="1"'/>
     </audio>
-    <audio id="ticking_audio_1" autobuffer preload>
+    <audio id="ticking_audio_1" autobuffer preload="auto">
       <source src="sounds/ticking.ogg" type='audio/ogg;codecs="vorbis"' />
       <source src="sounds/ticking.mp3" type='audio/mpeg;codecs="mp3"'/>
       <source src="sounds/ticking.wav" type='audio/x-wav;codecs="1"'/>
     </audio>
-    <audio id="ticking_audio_2" autobuffer preload>
+    <audio id="ticking_audio_2" autobuffer preload="auto">
       <source src="sounds/ticking.ogg" type='audio/ogg;codecs="vorbis"' />
       <source src="sounds/ticking.mp3" type='audio/mpeg;codecs="mp3"'/>
       <source src="sounds/ticking.wav" type='audio/x-wav;codecs="1"'/>
